@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "name": "kyma-gen",
+      "description": "Run a Kyma API model to generate images, video, or audio with the kyma-gen CLI. Vietnamese intents covered: tạo ảnh, vẽ, sinh ảnh, làm clip, tạo video, lồng tiếng. Guides discovery, schema inspection, input prep, execution, and result handling.",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "sha256": "b94e2f301b21db1f93304b9f4e6cfa26e44ee74aa04da03f0abda1867564262b",
+          "bytes": 5702
+        }
+      ]
+    }
+  ]
+}
