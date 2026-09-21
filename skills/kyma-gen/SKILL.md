@@ -1,18 +1,17 @@
 ---
 name: kyma-gen
 description: >
-  Run a Kyma API model to generate images, video, or audio with the kyma-gen
-  CLI. Use this when the user asks to create an image, generate a video, make
-  audio, restyle media, run a model, generate a logo, design a thumbnail,
-  produce a clip, or "use kyma-gen". Vietnamese intents also covered:
-  "tạo ảnh", "vẽ", "sinh ảnh", "làm clip", "tạo video", "lồng tiếng",
-  "thiết kế", "render". Guides discovery, schema inspection, input prep,
-  execution, and result handling.
-version: 0.1.0
+  Run a Kyma API model to generate images or audio with the kyma-gen CLI
+  (video generation is paused: no video model is listed). Use this when the
+  user asks to create an image, make audio, restyle media, run a model,
+  generate a logo, design a thumbnail, or "use kyma-gen". Vietnamese intents
+  also covered: "tạo ảnh", "vẽ", "sinh ảnh", "lồng tiếng", "thiết kế",
+  "render". Guides discovery, schema inspection, input prep, execution, and
+  result handling.
+version: 0.1.1
 tags:
   - generative-ai
   - image
-  - video
   - audio
   - cli
   - kyma
@@ -70,14 +69,14 @@ canonical error envelopes you can parse without scraping.
    kyma-gen run recraft-v4 --prompt "logo" --download "./out/{index}.{ext}" --json
    ```
 
-5. **Async submit** — for long-running jobs (video, audio), pass `--async`
-   to receive a `request_id` immediately, then poll:
+5. **Async submit** — for long-running jobs, pass `--async` to receive a
+   `request_id` immediately, then poll:
 
    ```sh
-   kyma-gen run kling-v1.6 --prompt "..." --async --json
+   kyma-gen run flux-2-pro --prompt "..." --async --json
    # → {"status":"submitted","request_id":"kg_01XYZ",...}
-   kyma-gen status kling-v1.6 kg_01XYZ --result --json
-   kyma-gen status kling-v1.6 kg_01XYZ --cancel --json    # to abort
+   kyma-gen status flux-2-pro kg_01XYZ --result --json
+   kyma-gen status flux-2-pro kg_01XYZ --cancel --json    # to abort
    ```
 
 6. **Upload reference media** — when a model needs an image/video/audio
